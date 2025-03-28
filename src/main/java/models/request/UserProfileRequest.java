@@ -7,6 +7,21 @@ public class UserProfileRequest {
     private String email;
     private String mobileNumber;
 
+    /**
+     * Making this constructor as Private [since we cannot create instance of this class outside, only builder class which
+     * is within this class]
+     * @param firstName
+     * @param lastName
+     * @param email
+     * @param mobileNumber
+     */
+    private UserProfileRequest(String firstName, String lastName, String email, String mobileNumber) {
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.email = email;
+        this.mobileNumber = mobileNumber;
+    }
+
     @Override
     public String toString() {
         return "UserProfileRequest{" +
@@ -49,12 +64,7 @@ public class UserProfileRequest {
         this.mobileNumber = mobileNumber;
     }
 
-    public UserProfileRequest(String firstName, String lastName, String email, String mobileNumber) {
-        this.firstName = firstName;
-        this.lastName = lastName;
-        this.email = email;
-        this.mobileNumber = mobileNumber;
-    }
+
 
 
     public static class Builder{

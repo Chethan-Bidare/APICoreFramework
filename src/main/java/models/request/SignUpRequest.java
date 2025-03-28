@@ -9,6 +9,19 @@ public class SignUpRequest {
     private String lastName;
     private String mobileNumber;
 
+    /*
+     * Making this constructor as Private [since we cannot create instance of this class outside, only builder class which
+     * is within this class]
+     */
+    private SignUpRequest(String username, String password, String email, String firstName, String lastName, String mobileNumber) {
+        this.username = username;
+        this.password = password;
+        this.email = email;
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.mobileNumber = mobileNumber;
+    }
+
     @Override
     public String toString() {
         return "SignUpRequest{" +
@@ -69,14 +82,7 @@ public class SignUpRequest {
         this.mobileNumber = mobileNumber;
     }
 
-    public SignUpRequest(String username, String password, String email, String firstName, String lastName, String mobileNumber) {
-        this.username = username;
-        this.password = password;
-        this.email = email;
-        this.firstName = firstName;
-        this.lastName = lastName;
-        this.mobileNumber = mobileNumber;
-    }
+
 
     public static class Builder {
         private String username;
