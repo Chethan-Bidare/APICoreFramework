@@ -1,1 +1,10 @@
+UserProfileTest.class
+filters\LoggingFilter.class
+services\UserProfileService.class
+services\ReportsService.class
+Practice.class
+ReportsTest.class
+baseService\BaseService.class
+listeners\TestListeners.class
+services\AuthService.class
 LoginApiTest.class

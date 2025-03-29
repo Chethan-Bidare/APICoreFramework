@@ -5,9 +5,10 @@ import models.request.SignUpRequest;
 import models.response.ForgotPasswordResponse;
 import models.response.LoginResponse;
 import org.testng.Assert;
+import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 import services.AuthService;
-
+@Listeners(listeners.TestListeners.class)
 public class LoginApiTest {
 
     @Test(description = "Verify Login API")

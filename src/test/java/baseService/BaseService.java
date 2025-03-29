@@ -1,5 +1,6 @@
 package baseService;
 
+import filters.LoggingFilter;
 import io.restassured.RestAssured;
 import io.restassured.http.ContentType;
 import io.restassured.response.Response;
@@ -11,10 +12,14 @@ import java.util.List;
 
 public class BaseService {
     private static final String BASE_URI = "http://64.227.160.186:8080";
-    private RequestSpecification requestSpecification;
+    private final RequestSpecification requestSpecification;
 
     public BaseService(){
         requestSpecification = RestAssured.given().baseUri(BASE_URI);
+    }
+
+    static {
+        RestAssured.filters(new LoggingFilter());
     }
 
     public void setAuthToken(String token){
